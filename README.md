@@ -31,13 +31,83 @@ print("Hello, world!")
 ## Numbers and Strings
 There are seven different basic types of data in Lua, with Luau adding some new ones for Roblox.
 
-`Numbers and Strings`
+`> Numbers and Strings`
 `Booleans`
 `Functions`
 `Tables`
 `Nil`
 `Threads`
 
+In Computing, a string is a sequence of one or more characters, typically letters. You can think of them
+as text (although computers really think of them as 0s and 1s).
+
+To write a string in Lua, you surround any characters with quotation marks. These can be single or double quotes, although it's a good idea to stay consistent with which one you use.
+```lua
+"This is a string."
+``` 
+Numbers are what you already know them to be: numbers. In Lua any number characters not wrapped in quotation marks will be a number.
+```lua
+100
+```
+Keep in mind that you can't use commas in these numbers, do this:
+`1000`
+not this:
+`1,000`
+
+If you want your numbers to be literal text, write them as a string:
+```lua
+"1,000"
+```
+
+You can do calculations with numbers, just like in real life.
+```lua
+print(3 + 3) -- 6
+```
+Notice those two dashes at the end of the line along with the number 20.
+That is a comment, and we'll be taking a short break from numbers and strings to talk about them:
+
+## Comments
+Comments are used in coding to annotate lines of code. They are ignored by the program running the code,
+so you write whatever you want in them. To write a  comment in Lua, put two dashes `--` and anything after that on that line will be a comment.
+```lua
+-- This is a comment.
+```
+You can also make comments span multiple lines. To do this, make the normal `--` but with two closing brackets `[[`, and make them on a separate line with two closing brackets `]]`.
+```lua
+--[[
+    This is a multi-line comment,
+    it can span multiple lines.
+--]]
+```
+
+
+We will be using comments from now on to show expected output.
+
+## Numbers and Strings (pt. 2)
+You can do all the other basic mathematical operations in Lua, not just addition.
+
+Subtraction:
+```lua
+print(3 - 3) -- 0
+```
+Multiplication:
+```lua
+print(3 * 3) -- 9
+```
+Division:
+```lua
+print(3 / 3) -- 1
+```
+Exponents:
+```lua
+print(3 ^ 3) -- 27
+```
+Numbers aren't the only things you can do operations on though. You can concatenate or join strings
+with the `..` operator.
+```lua
+print("Hello, " .. "world!")
+```
+It doesn't automatically put a space between the strings so we left one at the end of the first string.
 ## Variables
 We will start off with variables. Variables are a key component of programming. They can hold values which is extremely useful. There are 2 types of variables - local and global. I'll explain the differences later. (I know, a lot of promises) You should always use local variables whenever possible for many reasons.
 
@@ -65,7 +135,7 @@ local coolNumber = 12345
 ```
 You can use numbers in strings though. Keep in mind that strings and numbers will never be equal, even if they have the same value.
 
-## Variables (part 2)
+## Variables (pt. 2)
 Now that you have learned about data types we can get into variables more. Variables can be used in place of a data type. Here is an example
 ```lua
 local a = 1
@@ -312,8 +382,8 @@ Have you ever found yourself needing to repeat code for several amounts of times
 local num = 0
 
 while num < 10 do
-	num += 1
-	print(num)
+    num += 1
+    print(num)
 end
 
 print("Loop finished")
@@ -327,8 +397,8 @@ Using the same example as above:
 local num = 0
 
 repeat
-	num += 1
-	print(num)
+    num += 1
+    print(num)
 until num >= 10
 ```
 Once `num` hits 10, `10 >= 10` is true, so the loop breaks since the condition became true.
@@ -336,29 +406,29 @@ Once `num` hits 10, `10 >= 10` is true, so the loop breaks since the condition b
 **Note:** `repeat until` loops always execute their body at least once. This is because the condition is checked after the body is executed. This can be demonstrated with this example:
 ```lua
 repeat
-	print("Hello") -- prints
+    print("Hello") -- prints
 until true
 
 while false do
-	print("World") -- doesn't print
+    print("World") -- doesn't print
 end
 ```
 Next up, the `for` loop! Whenever you need to run code a set amount of times, the numeric `for` will come in handy.
 ```lua
 for i = 1, 10, 1 do
-	print(i)
+    print(i)
 end
 ```
 The first number, 1, is where you want to start. The second number is your goal, i.e. the number you want to reach. The third number is the step, i.e. how much to increment the start by on each cycle of the loop. By default the third number is optional; so the code could boil down to
 ```lua
 for i = 1, 10 do
-	print(i)
+    print(i)
 end
 ```
 You can also count *down* using a numeric `for`, but make sure to specify a *negative* step!
 ```lua
 for i = 20, 0, -0.5 do
-	print(i)
+    print(i)
 end
 ```
 If you want to skip a certain cycle of a loop, you can use the continue statement. An example is below.
@@ -411,3 +481,5 @@ game.Workspace.Baseplate.Name = "Platebase"
 game.Workspace.Platebase.Parent = game.ServerStorage -- ServerStorage is a child of the game global used for storing items that can only be seen by the server. The server-client relationship will be explaiend later.
 print(game.ServerStorage.Platebase) --> Platebase
 ```
+
+
