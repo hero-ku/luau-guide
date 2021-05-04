@@ -3,7 +3,7 @@ If you'd like to make changes to this, DM racc#1984 and I'll probably make you a
 ## What is Luau?
 Luau is a modified version of [Lua](https://www.lua.org/) used for game development on Roblox. It has some features removed and others added. 
 ## Making a script on Roblox
-Roblox has 3 different types of scripts: Server scripts, local scripts, and module scripts. I'll discuss the differences later, but for now we'll just start off with server scripts.
+Roblox has 3 different types of scripts: Server scripts (Scripts), local scripts (LocalScripts), and module scripts (ModuleScripts). I'll discuss the differences later, but for now we'll just start off with server scripts.
 
 To create a server script, go into Roblox Studio. Server scripts will run in the workspace, in GUIs, and in ServerScriptService. We'll make one in the ServerScriptService. Go into your Explorer menu (View -> Explorer) and hover over ServerScriptService. Right click on it and then click on `Insert Object...`. Search for just "Script", and click on `Script`. You should now be in the script editor. If you ever leave the script editor you can get back into it by double clicking on the script you want to edit.
 
@@ -11,7 +11,33 @@ To create a server script, go into Roblox Studio. Server scripts will run in the
 ![Example](https://cdn.discordapp.com/attachments/427201562293698562/788524366169112576/unknown.png)
 
 
-To run a script, go to Home -> Play.
+To run a script, go to `Home` -> `Play`. Your character will spawn in and the game will run. If you don't want this, you can click `Run` and only the server will run, your player will not join.
+
+## Calling Functions
+In Lua (and many other programming languages), most commands are executed through functions. Later we will show you how to write your own functions, but for now let's use some built-in ones. We'll start with `print`.
+
+To call a function, just type the function's name, as well as two parentheses `()`.
+```lua
+print()
+```
+Inside the parentheses are where parameters go. Parameters are values that the function will use when it executes.
+In this case, `print` will ouput all the parameters we give it to the console.
+```lua
+print("Hello, world!")
+```
+
+![Example](https://cdn.discordapp.com/attachments/825188739230728222/838944005734924328/unknown.png)
+
+## Numbers and Strings
+There are seven different basic types of data in Lua, with Luau adding some new ones for Roblox.
+
+`Numbers and Strings`
+`Booleans`
+`Functions`
+`Tables`
+`Nil`
+`Threads`
+
 ## Variables
 We will start off with variables. Variables are a key component of programming. They can hold values which is extremely useful. There are 2 types of variables - local and global. I'll explain the differences later. (I know, a lot of promises) You should always use local variables whenever possible for many reasons.
 
